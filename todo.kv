@@ -1,0 +1,47 @@
+Interface:
+    Screen:
+        name: "Ana screen"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(10)
+            spacing: dp(10)
+            Label:
+                text: "To-Do App"
+                font_name: "robotoblack.ttf"
+                font_size: "32sp"
+                size_hint: 1, None
+                height: dp(80)
+            ScrollView:
+                do_scroll_y: True
+                GridLayout:
+                    id: gridLayout
+                    cols: 1
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+            Button:
+                text: "Add"
+                size_hint: 1, None
+                height: dp(60)
+                on_press: root.show_popup()
+                font_size: '32sp'
+    Screen:
+        name:"Details Screen"
+        BoxLayout:
+            orientation: "vertical"
+            padding: dp(10)
+            spacing: dp(10)
+            Label:
+                id: noticeTitle
+                text: "Notice title"
+                size_hint_y: None
+                height: dp(80)
+            TextInput:
+                id: inputData
+            Button:
+                size_hint_y: None
+                height: dp(80)
+                font_size: '32sp'
+                text: "Back"
+                on_press: root.back_btn()
+                font_name:"robotolight.ttf"
